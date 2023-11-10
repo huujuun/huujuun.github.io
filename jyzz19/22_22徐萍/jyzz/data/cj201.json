@@ -1,0 +1,19 @@
+{
+	"code":200,
+	"msg":"查询成功",
+	"rows":[
+		{"name":"计算机操作能力实训","grade":91},
+		{"name":"计算机录入技术","grade":98},
+		{"name":"计算机网络基础","grade":92},
+		{"name":"经济政治与社会","grade":89},
+		{"name":"美术","grade":95},
+		{"name":"数学","grade":98},
+		{"name":"体育与健康","grade":86},
+		{"name":"图形图像处理","grade":90},
+		{"name":"音乐","grade":99},
+		{"name":"英语","grade":97},
+		{"name":"语文","grade":86},
+		{"name":"足球","grade":85}
+	]
+	
+}

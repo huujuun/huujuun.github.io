@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<style type="text/css">
+			.mui-badge {
+			    font-size: 18px;
+				}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script type="text/javascript">
+		
+		  
+			var base = window.location.host;
+			console.log(base);
+			mui.init();
+			mui.ready(function () {   //mready
+
+				var term = 231;
+				var p = new mui.PopPicker();
+
+				p.setData([{
+					value: '231',
+					text: '2023~2024学年第1学期 * '
+				}, {
+					value: '222',
+					text: '2022~2023学年第2学期 '
+				}, {
+					value: '221',
+					text: '2022~2023学年第1学期 '
+				}, {
+					value: '212',
+					text: '2021~2022学年第2学期 '
+				}, {
+					value: '211',
+					text: '2021~2022学年第1学期 '
+				}, ]);
+				
+				
+				
+				//dga
+				document.getElementById("xzxq").addEventListener("tap",function(){
+					p.show(function(data){
+						// console.log(data);
+						// console.log("选中啦 点确定啦");
+						// console.log(data[0].value);
+						// console.log(data[0].text);
+						term = data[0].value;
+						document.getElementById("xq").innerHTML = data[0].text;
+						document.getElementById("cj").innerHTML="";
+						var url = 'http://'+base+'/jyzz/data/cj'+term+'.json';
+						mui.getJSON(url,{},function(data){
+								console.log(data);
+								document.getElementById("cj").innerHTML="";
+								for (var i = 0; i < data.rows.length; i++) {
+									var html = `<li class="mui-table-view-cell">
+											${data.rows[i].name}<span class="mui-badge mui-badge-primary">${data.rows[i].grade}</span>
+									</li>`;
+									document.getElementById("cj").innerHTML+=html;
+								}
+								
+								
+								
+							}
+						);
+						
+
+						
+					});
+				})
+				
+	
+			
+			
+			// mui.getJSON('http://124.93.196.45:10001/prod-api/press/press/list',{},function(data){
+				
+			// 		console.log(data);
+			// 		for (var i = 0; i < data.rows.length; i++) {
+			// 			console.log(data.rows[i].title);
+			// 			document.getElementById("news").innerHTML += `<li>${data.rows[i].title}</li>`;
+			// 		}
+			// 	}
+			// );
+			var url = 'http://'+base+'/jyzz/data/cj'+term+'.json';
+			mui.getJSON(url,{},function(data){
+					console.log(data);
+					mui('#demo1').progressbar().setProgress(100);
+					mui('#demo1').progressbar().hide();
+					for (var i = 0; i < data.rows.length; i++) {
+						var html = `<li class="mui-table-view-cell">
+								${data.rows[i].name}<span class="mui-badge mui-badge-primary">${data.rows[i].grade}</span>
+						</li>`;
+						document.getElementById("cj").innerHTML+=html;
+					}
+					
+					
+					
+				}
+			);
+			
+
+			
+			
+			mui('#demo1').progressbar().setProgress(0);
+		
+			for(var i=0;i<6;i++){
+				
+				;(function(i){
+					setTimeout(function(){
+						console.log("执行时:" + i+"," +20*i);
+						mui('#demo1').progressbar().setProgress(20*i);
+						
+					}, i*1000)
+				})(i)
+			}
+
+			
+
+			
+			
+
+
+		})
+			
+			
+		
+		</script>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">成绩</h1>
+		</header>
+		<div class="mui-content">
+			<div id="demo1" class="mui-text-center">
+				<p class="mui-progressbar mui-progressbar-in" data-progress="20"><span></span></p>
+			</div>
+			<div class="mui-content-padded">
+				<h4 id='xq'>2023~2024学年第1学期 *</h4>
+				
+				
+				<button type="button" id="xzxq" class="mui-btn mui-btn-blue mui-btn-block">选择学期</button>
+			</div>
+
+		</div>
+		
+		<ul class="mui-table-view" id="cj">
+
+		</ul>
+	</body>
+
+</html>

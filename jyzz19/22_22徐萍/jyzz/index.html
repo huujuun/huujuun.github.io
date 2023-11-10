@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>手机版校园</title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+
+		<style type="text/css">
+			.header {
+				padding-left: 10px;
+				padding-right: 10px;
+				color: #ea7527;
+				font-size: 15px;
+			}
+
+			.mui-col-xs-20p {
+				width: 20%;
+			}
+
+			.mui-table-view.mui-grid-view .mui-table-view-cell {
+				padding: 5px 3px;
+			}
+
+			.mui-table-view {
+				margin: 10px;
+			}
+
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell>a:not(.mui-btn) {
+				padding-top: 7px;
+			}
+
+			#slider-dh {
+				padding-bottom: 25px;
+			}
+
+			.mui-grid-view.mui-grid-9 .mui-media {
+				color: rgb(53, 118, 197);
+			}
+
+			.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
+				color: #414141;
+				font-size: 13px;
+			}
+
+			.lanmu .content {
+				color: #939393;
+				font-size: 25px;
+				margin-left: 12px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				font-weight: bold;
+				text-align: center;
+			}
+
+			.mui-table-view-cell>a:not(.mui-btn) {
+				white-space: normal;
+			}
+
+			.mui-table-view .mui-media-object {
+				line-height: 70px;
+				max-width: 70px;
+				height: 70px;
+			}
+
+			.binfen {
+				color: #878787;
+				font-size: 19px;
+				margin-left: 12px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				text-align: center;
+			}
+
+			.binfen .content {
+				border-left: 3px rgb(53, 118, 197) solid;
+				padding-left: 5px;
+			}
+
+			.mui-card.header {
+				color: #ff5f02;
+			}
+
+			.mui-slider-indicator .mui-active.mui-indicator {
+				background: rgb(53, 118, 197);
+			}
+
+			.logo {
+				background-color: rgb(53, 118, 197);
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+
+			.foot {
+				color: white;
+				font-size: 10px;
+				height: 150px;
+				background-color: rgb(53, 118, 197);
+				margin-left: 10px;
+				margin-right: 10px;
+				text-align: center;
+				margin-top: 10px;
+			}
+
+			#cy ul li:nth-child(1) a {
+
+				background: #63a7ab;
+			}
+
+			#cy ul li:nth-child(2) a {
+				background: #dd8c47;
+			}
+
+			#cy ul li:nth-child(3) a {
+				background: #72bfe3;
+			}
+
+			#cy ul li:nth-child(4) a {
+				background: #c39393;
+			}
+
+			#cy ul li:nth-child(5) a {
+				background: #638ab3;
+			}
+
+			#cy ul li:nth-child(6) a {
+				background: #74a88c;
+			}
+
+			#cy ul li a {
+				width: 94%;
+				margin: auto;
+			}
+
+			#cy ul li {
+				padding-bottom: 6px;
+				padding-top: 10px;
+			}
+
+			#cy .mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
+				color: #FFFFFF;
+				font-size: 14px;
+			}
+
+			table {
+				width: 100%;
+				text-align: center;
+			}
+
+			.ewm {
+				padding-top: 10px;
+				padding-bottom: 5px;
+			}
+
+			.text {
+				padding-top: 10px;
+			}
+
+			/* 
+			td {
+				color: #ffffff;
+				padding-left: 50px;
+				padding-top: 10px;
+				background-color: rgb(53, 118, 197);
+			}
+			
+			.ewm{
+				padding-bottom: 10px;
+			} */
+		</style>
+
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+
+			mui.ready(function() {
+				var slider = mui("#slider");
+				console.log(slider);
+				slider.slider({
+					interval: 1000
+				});
+			})
+		</script>
+
+	</head>
+	<body>
+
+		<header class="mui-bar mui-bar-nav logo">
+			<img src="images/logo.png" width="270px">
+		</header>
+
+		<br>
+		<br>
+		<!-- 轮播图 -->
+		<div class="header">
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="./images/5.png">
+						</a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="./images/1.jpg">
+						</a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="./images/2.jpg">
+						</a>
+					</div>
+					<!-- 第三张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="./images/3.jpg">
+						</a>
+					</div>
+					<!-- 第四张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="./images/4.png">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="./images/5.png">
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="./images/1.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 九宫格 -->
+		<div id="slider-dh" class="mui-slider">
+			<div class="mui-slider-group">
+				<!--第一个内容区容器-->
+				<div class="mui-slider-item">
+					<ul class="mui-table-view mui-grid-view mui-grid-9">
+						<li class="mui-table-view-cell mui-media mui-col-xs-20p">
+							<a href="#">
+								<span class="mui-icon mui-icon-home"></span>
+								<div class="mui-media-body">首页</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-20p">
+							<a href="#">
+								<span class="mui-icon mui-icon-email"></span></span>
+								<div class="mui-media-body">校情总览</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-20p">
+							<a href="#">
+								<span class="mui-icon mui-icon-chatbubble"></span>
+								<div class="mui-media-body">党情建设</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-20p">
+							<a href="#">
+								<span class="mui-icon mui-icon-location"></span>
+								<div class="mui-media-body">积极德育</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-20p">
+							<a href="#">
+								<span class="mui-icon mui-icon-search"></span>
+								<div class="mui-media-body">积极教学</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-20p">
+							<a href="cj.html">
+								<span class="mui-icon mui-icon-person"></span>
+								<div class="mui-media-body">成绩查询</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-20p">
+							<a href="#">
+								<span class="mui-icon mui-icon-weibo"></span>
+								<div class="mui-media-body">招生就业</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-20p">
+							<a href="#">
+								<span class="mui-icon mui-icon-location"></span>
+								<div class="mui-media-body">科研督导</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-20p">
+							<a href="#">
+								<span class="mui-icon mui-icon-camera"></span>
+								<div class="mui-media-body">系部风采</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-20p">
+							<a href="#">
+								<span class="mui-icon mui-icon-weixin"></span>
+								<div class="mui-media-body">专题网站</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!--第二个内容区-->
+				<div class="mui-slider-item">
+					<ul class="mui-table-view mui-grid-view mui-grid-9">
+						<li class="mui-table-view-cell mui-media mui-col-xs-20p">
+							<a href="#">
+								<span class="mui-icon mui-icon-weibo"></span>
+								<div class="mui-media-body">招生就业</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-20p">
+							<a href="#">
+								<span class="mui-icon mui-icon-location"></span>
+								<div class="mui-media-body">科研督导</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-20p">
+							<a href="#">
+								<span class="mui-icon mui-icon-camera"></span>
+								<div class="mui-media-body">系部风采</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-20p">
+							<a href="#">
+								<span class="mui-icon mui-icon-weixin"></span>
+								<div class="mui-media-body">专题网站</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+			</div>
+
+		</div>
+		</div>
+
+		<div class="lanmu">
+			<div class="content">
+				—— 江阴中专 ——
+			</div>
+		</div>
+
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell mui-media">
+				<a href="detail.html">
+					<img class="mui-media-object mui-pull-left" src="./images/w1.png">
+					<div class="mui-media-body">
+						【喜报】我校《现代学徒制下中职教师专业发展策略研究》课题入选江苏省教育科学规划精品课题
+						<p class="mui-ellipsis">好事成双！江苏省联合职业技术学院江阴中专办学点成功立项两个省级“高水平”</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="./images/w2.jpg">
+					<div class="mui-media-body">
+						教育部办公厅公布，全国仅50人，江阴中专潘永惠校长入选！
+						<p class="mui-ellipsis">【喜报】我校《现代学徒制下中职教师专业发展策略研究》课题入选江苏省教育科学规划精品课题.</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="./images/w3.jpg">
+					<div class="mui-media-body">
+						好事成双！江苏省联合职业技术学院江阴中专办学点成功立项两个省级“高水平”
+						<p class="mui-ellipsis">教育部办公厅公布，全国仅50人，江阴中专潘永惠校长入选！</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+
+		<div class="binfen">
+			<div class="content">
+				—— 栏目一 · 缤纷校园 ——
+			</div>
+		</div>
+
+		<div class="mui-card">
+			<div class="header">
+				江阴中专“体育健康节”暨第八届校园马拉松燃情开跑
+			</div>
+
+			<div class="mui-card-content">
+				<img src="images/mls1.jpg">
+			</div>
+		</div>
+
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell">
+				<a>
+					商贸系“劳动炫技”短视频比赛圆满举行
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a>
+					“陶”冶情操 趣味社团
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a>
+					劳动之美
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a>
+					悟劳动精神，品乡贤文化
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a>
+					创建思政示范课程，赋能学校人才培养
+				</a>
+			</li>
+		</ul>
+
+		<div class="binfen">
+			<div class="content">
+				—— 栏目二 · 焦点新闻 ——
+			</div>
+		</div>
+
+		<div class="mui-card">
+			<div class="header">
+				江阴市高级技工学校接受省人社厅办学水平现场督导评估
+			</div>
+
+			<div class="mui-card-content">
+				<img src="./images/jdxw1.jpg">
+			</div>
+		</div>
+
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell">
+				<a>
+					成长互促，智慧共生
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a>
+					江阴中专 全员“赋”能
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a>
+					步步登高开视野 年年重九胜春光
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a>
+					好事成双！江阴中专成功立项两个省级“高水平”
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a>
+					座谈讲座添活力 考察指导增援力
+				</a>
+			</li>
+		</ul>
+
+		<div class="mui-content">
+			<div style="padding: 10px 10px;">
+				<div id="segmentedControl" class="mui-segmented-control">
+					<a class="mui-control-item" href="#item1">校园公告</a>
+					<a class="mui-control-item" href="#item2">招标信息</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="item1" class="mui-control-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					【党政办】关于做好对无锡市人民政府教育履职情况满意度调查的通知
+				</li>
+				<li class="mui-table-view-cell">
+					【党政办】关于转发江阴市教育局暑期师德师风工作提醒函的通知
+				</li>
+				<li class="mui-table-view-cell">
+					【教务处】关于2023年校级教学成果奖评选结果公示的通知
+				</li>
+				<li class="mui-table-view-cell">
+					【发展规划处】五年制高职人才培养水平评估工作简报（总第4期)
+				</li>
+				<li class="mui-table-view-cell">
+					【教务处】2023年江苏省职业院校教学能力比赛江苏联合职业技术学院参赛团队信息公示
+				</li>
+				<li class="mui-table-view-cell">
+					【招生就业处】关于公布2023年婴幼儿托育服务与管理专业面试成绩合格名单的通知 </li>
+			</ul>
+		</div>
+
+		<div id="item2" class="mui-control-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					废标公告--江阴中专关于空调及制冷设备维修项目(二次）采购的废标公告 </li>
+				<li class="mui-table-view-cell">
+					招标公告--江阴中专关于空调及制冷设备维修项目采购的招标公告 </li>
+				<li class="mui-table-view-cell">
+					招标公告--江阴中等专业学校《消防器材维修》采购项目(二次） </li>
+				<li class="mui-table-view-cell">
+					废标公告--江阴中专关于消防器材维修项目采购的废标公告 </li>
+				<li class="mui-table-view-cell">
+					废标公告--江阴中专关于空调及制冷设备维修项目采购的废标公告 </li>
+				<li class="mui-table-view-cell">
+					招标公告--江阴中等专业学校《消防器材维修》采购项目
+			</ul>
+		</div>
+
+		<div class="binfen">
+			<div class="content">
+				—— 栏目三 · 专题网站 ——
+			</div>
+		</div>
+
+		<div id="cy">
+			<ul class="mui-table-view mui-grid-view mui-grid-9">
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<a href="#">
+						<div class="mui-media-body">江阴中专人才培养方案</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<a href="#">
+						<div class="mui-media-body">雏鹰梦工场</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<a href="#">
+						<div class="mui-media-body">爱数网盘</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<a href="#">
+
+						<div class="mui-media-body">泛雅数字教学平台</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<a href="#">
+						<div class="mui-media-body">工作安排</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<a href="#">
+
+						<div class="mui-media-body">万方数据知识服务平台</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<table border="0" cellspacing="" cellpadding="">
+			<tr>
+				<td class="text">江阴中专公众号</td>
+				<td class="text">江阴中专微校园</td>
+			</tr>
+
+			<tr>
+				<td class="ewm">
+					<img src="images/ewm1.PNG">
+				</td>
+				<td class="ewm">
+					<img src="images/ewm2.PNG">
+				</td>
+			</tr>
+		</table>
+
+		<div class="foot">
+			<br>版权所有：江苏省江阴中等专业学校
+			<br>地址：江苏省江阴市人民西路532号
+			<br>联系电话：0510-86105608
+			<br>邮箱：jyzz5608@163.com
+			<br>邮编：214433
+		</div>
+
+	</body>
+</html>

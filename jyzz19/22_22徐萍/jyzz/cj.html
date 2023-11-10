@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<style type="text/css">
+			.mui-badge {
+				font-size: 16px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script type="text/javascript">
+		
+			var base = window.location.host;
+			mui.init();
+			mui.ready(function() { //mready
+
+				var term = 231;
+				var p = new mui.PopPicker();
+
+				p.setData(
+					[{
+						value: '231',
+						text: '2023-2024学年第一学期 *'
+					}, {
+						value: '222',
+						text: '2022-2023学年第二学期'
+					}, {
+						value: '221',
+						text: '2022-2023学年第一学期'
+					}, {
+						value: '212',
+						text: '2021-2022学年第二学期'
+					}, {
+						value: '211',
+						text: '2021-2022学年第一学期'
+					}, {
+						value: '202',
+						text: '2020-2021学年第二学期'
+					}, {
+						value: '201',
+						text: '2020-2021学年第一学期'
+					}, {
+						value: '192',
+						text: '2019-2020学年第二学期'
+					}, {
+						value: '191',
+						text: '2019-2020学年第一学期'
+					}, ]);
+
+				document.getElementById("xzxq").addEventListener("tap", function() {
+					p.show(function(data) {
+						term = data[0].value;
+						document.getElementById("xq").innerHTML = data[0].text;
+						var url = 'http://'+base+'/jyzz/data/cj' + term + '.json';
+						mui.getJSON(url, {}, function(data) {
+							console.log(data);
+					document.getElementById("cj").innerHTML = "";
+
+							for (var i = 0; i < data.rows.length; i++) {
+								var html = `<li class="mui-table-view-cell">
+											${data.rows[i].name}<span class="mui-badge mui-badge-primary">${data.rows[i].grade}</span>
+									</li>`;
+								document.getElementById("cj").innerHTML += html;
+							}
+						});
+					});
+					
+					mui('#demo1').progressbar().setProgress(0);
+							
+					for(var i=0;i<6;i++){
+						
+						;(function(i){
+							setTimeout(function(){
+								console.log("执行时:" + i+"," +20*i);
+								mui('#demo1').progressbar().setProgress(20*i);
+								
+							}, i*1000)
+						})(i)
+					}
+					
+					
+				})
+
+				var url = 'http://'+base+'/jyzz/data/cj' + term + '.json';
+				mui.getJSON(url, {}, function(data) {
+					console.log(data);
+					for (var i = 0; i < data.rows.length; i++) {
+						var html = `<li class="mui-table-view-cell">
+								${data.rows[i].name}<span class="mui-badge mui-badge-primary">${data.rows[i].grade}</span>
+						</li>`;
+						document.getElementById("cj").innerHTML += html;
+					}
+				});
+			})
+		</script>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">成绩查询</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<h4 id='xq'>当前学期</h4>
+				<button type="button" id="xzxq" class="mui-btn mui-btn-grey mui-btn-block">选择学期</button>
+			</div>
+
+		</div>
+
+		<ul class="mui-table-view" id="cj">
+
+		</ul>
+	</body>
+
+</html>
