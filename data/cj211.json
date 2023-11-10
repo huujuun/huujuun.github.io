@@ -1,0 +1,15 @@
+{
+	"code":200,
+	"msg":"查询成功",
+	"rows":[
+		{"name":"SQLserver数据库技术","grade":91},
+		{"name":"高级语言二","grade":93},
+		{"name":"毛泽东思想与中国特色社会主义体系概论","grade":87},
+		{"name":"视频剪辑","grade":92},
+		{"name":"数学","grade":97},
+		{"name":"体育与健康","grade":89},
+		{"name":"英语","grade":92},
+		{"name":"语文","grade":98}
+	]
+	
+}

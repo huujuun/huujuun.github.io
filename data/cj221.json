@@ -1,0 +1,17 @@
+{
+	"code":200,
+	"msg":"查询成功",
+	"rows":[
+		{"name":"Web前端开发","grade":82},
+		{"name":"彩铅绘画技术","grade":93},
+		{"name":"服务器配置与管理","grade":94},
+		{"name":"高级语言三","grade":92},
+		{"name":"环保教育","grade":80},
+		{"name":"计算机辅助设计","grade":96},
+		{"name":"数学","grade":97},
+		{"name":"体育与健康","grade":92},
+		{"name":"语文","grade":90},
+		{"name":"英语","grade":89}
+	]
+	
+}
